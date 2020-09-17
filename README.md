@@ -1,11 +1,11 @@
 # Habits-UI-Component
-This is a component that I have been creating for the productivity app: prodzr
+This is a component that I have been creating for the productivity app: Prodzr
 
 Welcome! if you are reading this in means that your are interested in my aplication, I am glad. As I mention on my website I cannot link the entire repository of the prodzr project. Here comes a brief explination of how the component I have been building should behave. It is not perfect but i think it can give you a good idea of what i can do and what still stands before me. 
 
 -----------------------------
 
-This Component is used in the prodzr app in order to show and track habits. 
+This Component is used in the Prodzr app in order to show and track habits. 
 
 The user specifies on which days he will commit himself to performing a task, this days will be considered "required" all others will be considered "not required".
 Based on this the component will display the days of the current week with diferent colors to signalize their status. 
