@@ -21,13 +21,15 @@ function HabitDay({ habitStatus, id }) {
       );
   };
 
+  const isPresent = habitStatus.tense === "PRESENT";
+
   return (
     <div
       onClick={changeStatusOfHabit}
       css={css`
         position: relative;
-        height: ${habitStatus.tense === "PRESENT" ? "5rem" : "3rem"};
-        width: ${habitStatus.tense === "PRESENT" ? "5rem" : "3rem"};
+        height: ${isPresent ? "5rem" : "3rem"};
+        width: ${isPresent ? "5rem" : "3rem"};
         background-color: ${habitStyling.color};
         border-style: solid;
         border-width: 4px;
@@ -45,7 +47,7 @@ function HabitDay({ habitStatus, id }) {
           opacity: 0;
           border-radius: 50%;
           color: white;
-          font-size: ${habitStatus.tense === "PRESENT" ? "5rem" : "2.5rem"};
+          font-size: ${isPresent ? "5rem" : "2.5rem"};
         }
 
         &:hover {

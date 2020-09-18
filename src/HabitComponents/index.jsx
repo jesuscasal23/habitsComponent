@@ -6,6 +6,7 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import Chip from "@material-ui/core/Chip";
 import { Box } from "@material-ui/core";
 import HabitWeek from "./components/HabitWeek";
+import Data from "../service/habitsData";
 
 function Habits({ id }) {
   return (
@@ -36,7 +37,7 @@ function Habits({ id }) {
           padding: 10px;
         `}
       >
-        Meditate
+        {Data[id].name}
       </Typography>
       <CreateIcon
         css={css`

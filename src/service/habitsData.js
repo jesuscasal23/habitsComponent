@@ -1,6 +1,6 @@
 export default {
   1001: {
-    name: 'Habit Name',
+    name: 'Meditate',
     id: '1001',
     parent_id: null, // category_id or goal_id
     description: 'some description here, how can we support markdown? Or some other text with more features?',
