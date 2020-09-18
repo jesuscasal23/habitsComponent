@@ -1,5 +1,8 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import {
+  jsx,
+  css
+} from "@emotion/core";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 // mini
 import CheckIcon from "@material-ui/icons/Check";
@@ -15,72 +18,79 @@ import HelpIcon from "@material-ui/icons/Help";
 import AirlineSeatIndividualSuiteIcon from "@material-ui/icons/AirlineSeatIndividualSuite";
 
 const icons = {
-  completedIcon: (
-    <CheckCircleOutlineIcon
-      className="icon"
-      css={css`
+  completedIcon: ( <
+    CheckCircleOutlineIcon className = "icon"
+    css = {
+      css `
         background-color: green;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  miniIcon: (
-    <CheckIcon
-      className="icon"
-      css={css`
+  miniIcon: ( <
+    CheckIcon className = "icon"
+    css = {
+      css `
         background-color: lightgreen;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  skipedIcon: (
-    <DoubleArrowIcon
-      className="icon"
-      css={css`
+  skipedIcon: ( <
+    DoubleArrowIcon className = "icon"
+    css = {
+      css `
         background-color: blue;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  failedIcon: (
-    <CloseIcon
-      className="icon"
-      css={css`
+  failedIcon: ( <
+    CloseIcon className = "icon"
+    css = {
+      css `
         background-color: red;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  requiredIcon: (
-    <PriorityHighIcon
-      className="icon"
-      css={css`
+  requiredIcon: ( <
+    PriorityHighIcon className = "icon"
+    css = {
+      css `
         background-color: grey;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  optionalIcon: (
-    <HelpIcon
-      className="icon"
-      css={css`
+  optionalIcon: ( <
+    HelpIcon className = "icon"
+    css = {
+      css `
         background-color: grey;
         color: white;
-      `}
+      `
+    }
     />
   ),
-  notRequiredIcon: (
-    <AirlineSeatIndividualSuiteIcon
-      className="icon"
-      css={css`
+  notRequiredIcon: ( <
+    AirlineSeatIndividualSuiteIcon className = "icon"
+    css = {
+      css `
         background-color: grey;
         color: white;
-      `}
+      `
+    }
     />
   ),
 };
 
-export function getCorrectHoverIcon(desiredIcon) {
+export function getHoverIcon(desiredIcon) {
   if (desiredIcon === "COMPLETED") return icons.completedIcon;
   if (desiredIcon === "MINI") return icons.miniIcon;
   if (desiredIcon === "SKIPPED") return icons.skipedIcon;

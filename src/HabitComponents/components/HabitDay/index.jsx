@@ -1,22 +1,19 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import styling, { getCorrectHoverIcon } from "./service/statusstyles";
-
-// context
+import styling, { getHoverIcon } from "./service/statusstyles";
 import { useSetHabits } from "../../../service/habits";
 
 function HabitDay({ habitStatus, id }) {
   const { changeHabitStatus } = useSetHabits();
-  // habitStyling = setclickorder(habitStatus)
   const habitStyling = styling[habitStatus.status];
-  const correctHoverIcon = getCorrectHoverIcon(habitStatus.changesinto);
+  const correctHoverIcon = getHoverIcon(habitStatus.changesinto);
 
   const changeStatusOfHabit = () => {
     if (habitStatus.tense !== "FUTURE")
       changeHabitStatus(
         id,
         habitStatus,
-        habitStatus.taskdate,
+        habitStatus.taskDate,
         habitStatus.changesinto
       );
   };
@@ -31,10 +28,8 @@ function HabitDay({ habitStatus, id }) {
         height: ${isPresent ? "5rem" : "3rem"};
         width: ${isPresent ? "5rem" : "3rem"};
         background-color: ${habitStyling.color};
-        border-style: solid;
-        border-width: 4px;
-        border-color: ${habitStyling.border};
         border-radius: 50%;
+        border: 4px solid ${habitStyling.border};
         margin: auto auto;
 
         .icon {
@@ -80,7 +75,7 @@ function HabitDay({ habitStatus, id }) {
           letter-spacing: 0.25px;
         `}
       >
-        {habitStatus.taskdate.slice(8, 10)}
+        {habitStatus.taskDate.slice(8, 10)}
       </p>
       {habitStatus.tense === "future" ? null : correctHoverIcon}
     </div>

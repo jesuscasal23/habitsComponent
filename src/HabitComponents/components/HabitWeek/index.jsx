@@ -9,7 +9,6 @@ import HabitDay from "../HabitDay";
 import getInfoAboutHabitDay from "./service/createsHabitInfo";
 
 function HabitWeek({ id }) {
-  // replace for a loop ?
   const initialState = [
     moment().add(-5, "days").format("YYYY-MM-DD"),
     moment().add(-4, "days").format("YYYY-MM-DD"),
