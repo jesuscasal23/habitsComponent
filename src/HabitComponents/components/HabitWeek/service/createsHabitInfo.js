@@ -13,9 +13,9 @@ function pastFutureOrPresent(date) {
   return tense
 }
 
-function searchInDatabase(date, habitsData) {
+function searchInDatabase(date, habitsData, id) {
   let DatabaseEntry = false
-  const HabitDayList = habitsData['1001'].progress
+  const HabitDayList = habitsData[id].progress
   const SearchedHabitDate = HabitDayList.find((e) => e.timestamp.includes(date))
   if (SearchedHabitDate) DatabaseEntry = SearchedHabitDate.status
   return DatabaseEntry
@@ -61,7 +61,7 @@ function setChangesInto(required, tense, status) {
   return next
 }
 
-export default function getHabitDayInfoAndSaveInState(date, habitsData) {
+export default function getHabitDayInfoAndSaveInState(date, habitsData, id) {
   const output = {
     status: 'FAILED',
     current: false,
@@ -75,7 +75,7 @@ export default function getHabitDayInfoAndSaveInState(date, habitsData) {
   // else set status to required or not required
   output.tense = pastFutureOrPresent(date)
 
-  if (searchInDatabase(date, habitsData)) {
+  if (searchInDatabase(date, habitsData, id)) {
     output.status = searchInDatabase(date, habitsData)
   } else {
     output.status = isTheHabitDayRequired(date, habitsData)

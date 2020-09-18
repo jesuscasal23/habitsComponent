@@ -8,7 +8,7 @@ import { useHabits } from "../../../service/habits";
 import HabitDay from "../HabitDay";
 import getInfoAboutHabitDay from "./service/createsHabitInfo";
 
-function HabitWeek() {
+function HabitWeek({ id }) {
   // replace for a loop ?
   const initialState = [
     moment().add(-5, "days").format("YYYY-MM-DD"),
@@ -42,7 +42,7 @@ function HabitWeek() {
         `}
       />
       {dates.map((date, i) => {
-        const result = getInfoAboutHabitDay(date, habitsData);
+        const result = getInfoAboutHabitDay(date, habitsData, id);
 
         return (
           <div
@@ -52,7 +52,7 @@ function HabitWeek() {
               margin: auto auto;
             `}
           >
-            <HabitDay habitStatus={result} />
+            <HabitDay habitStatus={result} id={id} />
           </div>
         );
       })}

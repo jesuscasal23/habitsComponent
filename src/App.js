@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <DataContextProvider>
-        <Habits />
-      </DataContextProvider>
+        <Habits id="1001" />
+      </DataContextProvider>{" "}
     </div>
   );
 }

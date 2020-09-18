@@ -7,7 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import { Box } from "@material-ui/core";
 import HabitWeek from "./components/HabitWeek";
 
-function Habits() {
+function Habits({ id }) {
   return (
     <Box
       css={css`
@@ -18,13 +18,14 @@ function Habits() {
         position: relative;
         margin-top: 20px;
         border-radius: 20px;
+        min-width: 700px;
         -webkit-box-shadow: 9px 21px 54px 32px rgba(169, 222, 238, 1);
         -moz-box-shadow: 9px 21px 54px 32px rgba(169, 222, 238, 1);
         box-shadow: 9px 21px 54px 32px rgba(169, 222, 238, 1);
       `}
     >
       <Typography
-        variant="h4"
+        variant="h5"
         css={css`
           font-size: 1rem;
           line-height: 1rem;
@@ -32,7 +33,7 @@ function Habits() {
           margin-bottom: 8px;
           margin-left: 12px;
           font-weight: 600;
-          padding: 20px;
+          padding: 10px;
         `}
       >
         Meditate
@@ -92,15 +93,15 @@ function Habits() {
       </div>
 
       <div>
-        <HabitWeek />
+        <HabitWeek id={id} />
       </div>
       <Typography
-        variant="h4"
+        variant="h5"
         css={css`
           font-size: 12px;
           line-height: 20px;
           mix-blend-mode: darken;
-          padding: 20px;
+          padding: 10px;
         `}
       >
         Month
