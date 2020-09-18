@@ -5,7 +5,7 @@ import styling, { getCorrectHoverIcon } from "./service/statusstyles";
 // context
 import { useSetHabits } from "../../../service/habits";
 
-function HabitDay({ habitStatus }) {
+function HabitDay({ habitStatus, id }) {
   const { changeHabitStatus } = useSetHabits();
   // habitStyling = setclickorder(habitStatus)
   const habitStyling = styling[habitStatus.status];
@@ -14,7 +14,7 @@ function HabitDay({ habitStatus }) {
   const changeStatusOfHabit = () => {
     if (habitStatus.tense !== "FUTURE")
       changeHabitStatus(
-        "1001",
+        id,
         habitStatus,
         habitStatus.taskdate,
         habitStatus.changesinto

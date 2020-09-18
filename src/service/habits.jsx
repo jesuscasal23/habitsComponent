@@ -11,30 +11,30 @@ export default function HabitsProvider({ children }) {
     return Promise.resolve({ ...mockedHabits });
   };
 
-  const createHabitEntry = (next, date) => {
+  const createHabitEntry = (next, date, id) => {
     const habitsCopy = { ...habits };
     const newEntry = { timestamp: date, next };
-    habitsCopy["1001"].progress.push(newEntry);
+    habitsCopy[id].progress.push(newEntry);
     setHabits(habitsCopy);
   };
 
   const changeHabitStatus = (id, status, date, next) => {
     // is there an entry for this date in the database? if yes
     const habitsCopy = { ...habits };
-    const findEntry = habitsCopy["1001"].progress.findIndex(
+    const findEntry = habitsCopy[id].progress.findIndex(
       (obj) => obj.timestamp === date
     );
     if (findEntry > -1) {
-      habitsCopy["1001"].progress[findEntry].status = next;
+      habitsCopy[id].progress[findEntry].status = next;
       setHabits(habitsCopy);
       // if there is no entry i create one
     } else {
-      createHabitEntry(next, date);
+      createHabitEntry(next, date, id);
       // here i call the function again so that the change become effective
       // otherwise the use would have to clikc twice once to create a entry
       // for that task in case that it does not exist and againto change
       // the existing task
-      changeHabitStatus(id, status, date, next);
+      changeHabitStatus(id, status, date, next, id);
     }
   };
 

@@ -76,7 +76,7 @@ export default function getHabitDayInfoAndSaveInState(date, habitsData, id) {
   output.tense = pastFutureOrPresent(date)
 
   if (searchInDatabase(date, habitsData, id)) {
-    output.status = searchInDatabase(date, habitsData)
+    output.status = searchInDatabase(date, habitsData, id)
   } else {
     output.status = isTheHabitDayRequired(date, habitsData)
 
