@@ -1,7 +1,7 @@
 # Habits-UI-Component
 This is a component that I have been creating for the productivity app: Prodzr
 
-Welcome! if you are reading this in means that your are interested in my aplication, I am glad. As I mention on my website I cannot link the entire repository of the prodzr project. Here comes a brief explination of how the component I have been building should behave. It is not perfect but i think it can give you a good idea of what i can do and what still stands before me. 
+Welcome! if you are reading this in means that your are interested in my aplication, I am glad. As I mention on my website I cannot link the entire repository of the prodzr project. Here comes a brief explination of how the component I have been building should behave. It is not perfect nor is it finished but i think it can give you a good idea of what i can do and what still stands before me. 
 
 -----------------------------
 
